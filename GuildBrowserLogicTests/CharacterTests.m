@@ -23,6 +23,11 @@
 // 2
 -(void)setUp
 {
+    
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *path = [bundle pathForResource:@"TestData" ofType:@"xml"];
+    NSData *xmlData = [NSData dataWithContentsOfFile:path];
+    
     // 3
     NSURL *dataServiceURL = [[NSBundle bundleForClass:self.class]
                              URLForResource:@"character" withExtension:@"json"];
